@@ -18,6 +18,6 @@ COPY . .
 
 # Give permission to all users to operate the upload module
 RUN chmod 777 ./upload_module_x64
-
+EXPOSE 80
 # Run the start.sh script
 CMD ["bash","start.sh"]
