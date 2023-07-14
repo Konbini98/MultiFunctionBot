@@ -94,7 +94,7 @@ class DatabaseHelper:
     async def get_all_users(self):
         if self.__err:
             return
-        all_users = self.__col.find({"user_id"})
+        all_users = self.__col.find({"users_id"})
         self.__client.close()
         return all_users
 
