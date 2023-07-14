@@ -3,7 +3,7 @@ from asyncio import sleep
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from bot.config import BOT_USERNAME, prefixes
-from bot.database import MongoDb
+from bot.helpers.database import DatabaseHelper
 from bot.helpers.decorators import ratelimiter
 from bot.helpers.decorators import dev_commands
 from bot.helpers.filters import dev_cmd
