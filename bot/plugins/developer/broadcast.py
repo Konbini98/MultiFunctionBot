@@ -14,8 +14,8 @@ commands = ["broadcast", f"broadcast@{BOT_USERNAME}"]
 
 @Client.on_message(filters.command(commands, **prefixes))
 @dev_commands
-#async def broadcast(c, m):
-async def broadcast(_: Client, message: Message):
+async def broadcast(c, message):
+#async def broadcast(_: Client, message: Message):
     """
     Broadcast the message via bot to bot users
     """
