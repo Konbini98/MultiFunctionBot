@@ -2,13 +2,15 @@ from asyncio import sleep
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
-
+from bot.config import BOT_USERNAME, prefixes
 from bot.database import MongoDb
 from bot.helpers.decorators import ratelimiter
+from bot.helpers.decorators import dev_commands
 from bot.helpers.filters import dev_cmd
 from bot.logging import LOGGER
 
-
+Broadcast_IDs = {}
+commands = ["broadcast", f"broadcast@{BOT_USERNAME}"]
 @Client.on_message(filters.command(["broadcast"]) & dev_cmd)
 @ratelimiter
 async def broadcast(_: Client, message: Message):
