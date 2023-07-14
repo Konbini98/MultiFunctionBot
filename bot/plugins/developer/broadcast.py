@@ -6,12 +6,11 @@ from bot.config import BOT_USERNAME, prefixes
 from bot.helpers.database import DatabaseHelper
 from bot.helpers.decorators import ratelimiter
 from bot.helpers.decorators import dev_commands
-from bot.helpers.filters import dev_cmd
 from bot.logging import LOGGER
 
 Broadcast_IDs = {}
 commands = ["broadcast", f"broadcast@{BOT_USERNAME}"]
-@Client.on_message(filters.command(["broadcast"]) & dev_cmd)
+@Client.on_message(filters.command(["broadcast"]) & dev_commands)
 @ratelimiter
 async def broadcast(_: Client, message: Message):
     """
