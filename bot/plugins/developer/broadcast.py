@@ -3,10 +3,10 @@ from asyncio import sleep
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from TelegramBot.database import MongoDb
-from TelegramBot.helpers.decorators import ratelimiter
-from TelegramBot.helpers.filters import dev_cmd
-from TelegramBot.logging import LOGGER
+from bot.database import MongoDb
+from bot.helpers.decorators import ratelimiter
+from bot.helpers.filters import dev_cmd
+from bot.logging import LOGGER
 
 
 @Client.on_message(filters.command(["broadcast"]) & dev_cmd)
