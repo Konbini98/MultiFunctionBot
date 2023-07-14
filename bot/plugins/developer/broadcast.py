@@ -19,22 +19,22 @@ async def broadcast(c, m):
     Broadcast the message via bot to bot users
     """
 
-    if not (broadcast_msg := m.reply_to_m):
+    if not (broadcast_msg := message.reply_to_message):
         broadcast_usage = f"Reply with command /broadcast to the message you want to broadcast.\n\n/broadcast loud - To Enable Notificatons"
         return await m.reply_text(broadcast_usage, quote=True)
 
-    proses_msg = await m.reply_text(
+    proses_msg = await message.reply_text(
         "**Broadcasting started. Please wait for few minutes for it to get completed.**",
         quote=True,
     )
 
     disable_notification = True
-    commands = m.command
+    commands = message.command
 
     if len(commands) > 3:
         return await proses_msg.edit("Invalid Command")
 
-    for command in m.command:
+    for command in message.command:
         if command.lower() == "loud":
             disable_notification = False
 
